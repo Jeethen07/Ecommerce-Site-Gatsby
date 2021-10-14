@@ -11,7 +11,7 @@ import CourseCart from "../components/Cart/CourseCart"
 const IndexPage = ({ data }) => (
   <Layout>
     <Seo title="Book Mart" />
-    
+
     {/* <HeroSection
       title="i write code"
       img={data.img.childImageSharp.fluid}
@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => (
       heroclass="hero-background"
     /> */}
     {/* <InfoBlock heading="About Us" /> */}
-    <CourseCart courses={data.courses} />
+    <CourseCart books={data.books} />
     {/* <DualInfoBlock
       heading="Our Team"
       img="https://www.goodcore.co.uk/blog/wp-content/uploads/2019/08/coding-vs-programming-2.jpg"
@@ -36,18 +36,15 @@ export const query = graphql`
         }
       }
     }
-    courses: allContentfulCourses {
+    books: allContentfulBooks {
       edges {
         node {
           id
           title
+          author
           price
-          category
-          description {
-            description
-          }
           image {
-            fixed(width: 200, height: 120) {
+            fixed(width: 300, height: 400) {
               ...GatsbyContentfulFixed_tracedSVG
             }
           }

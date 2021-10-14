@@ -6,42 +6,39 @@ export default class CourseCart extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      courses: props.courses.edges,
-      mycourses: props.courses.edges,
+      courses: props.books.edges,
+      mycourses: props.books.edges,
     }
   }
   render() {
     return (
       <section className="py-5">
         <div className="container">
-          <Heading title="Courses" />
+          <Heading title="Books" />
           <div className="row">
             {this.state.mycourses.map(({ node }) => {
               return (
-                <div
-                  key={node.id}
-                  className="col-11 col-md-6 d-flex my-3 mx-auto"
-                >
+                <div key={node.id} className="col-11 col-md-6 my-3 mx-auto">
                   <Img fixed={node.image.fixed} />
-                  <div className="flex-grow-1 px-3">
-                    <div className="d-flex justify-content-between">
-                      <h6 className="mb-0 text-white">{node.title}</h6>
-                      <h6 className="mb-0 text-success">$${node.price}</h6>
-                    </div>
-                    <p className="text-muted text-white">
-                      <small>{node.description.description}</small>
-                    </p>
-                    <button
-                      data-item-id={node.id}
-                      data-item-name={node.title}
-                      data-item-price={node.price}
-                      data-item-url="https://learncodeonline.in"
-                      data-item-image={node.image.fixed.src}
-                      className="btn btn-warning snipcart-add-item"
-                    >
-                      Join Now
-                    </button>
+                  <div className="py-1">
+                    <h6 className="mb-0 text-white text-">{node.title}</h6>
                   </div>
+                  <div className="py-1">
+                    <h6 className="mb-0 text-success">{node.author}</h6>
+                  </div>
+                  <div className="py-1">
+                    <h6 className="mb-0 text-success">${node.price}</h6>
+                  </div>
+                  <button
+                    data-item-id={node.id}
+                    data-item-name={node.title}
+                    data-item-price={node.price}
+                    data-item-url="https://learncodeonline.in"
+                    data-item-image={node.image.fixed.src}
+                    className="btn btn-warning snipcart-add-item"
+                  >
+                    Join Now
+                  </button>
                 </div>
               )
             })}
