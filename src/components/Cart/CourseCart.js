@@ -14,11 +14,12 @@ export default class CourseCart extends Component {
     return (
       <section className="py-5">
         <div className="container">
-          <Heading title="Books" />
+          <Heading title="Popular Books" />
           <div className="row">
             {this.state.mycourses.map(({ node }) => {
               return (
-                <div key={node.id} className="col-11 col-md-6 my-3 mx-auto">
+                // col-11 col-md-6 my-3 mx-auto
+                <div key={node.id} className="row-3 my-3 mx-auto">
                   <Img fixed={node.image.fixed} />
                   <div className="py-1">
                     <h6 className="mb-0 text-white text-">{node.title}</h6>

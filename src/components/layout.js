@@ -13,6 +13,7 @@ import "./layout.css"
 // import Footer from "./Reuseable/Footer"
 import Navbar from "./Reuseable/Navbar"
 
+
 const Layout = ({ children }) => (
   <div className="bg-theme">
     <Navbar />
