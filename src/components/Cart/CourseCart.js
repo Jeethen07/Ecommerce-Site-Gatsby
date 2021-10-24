@@ -38,7 +38,7 @@ export default class CourseCart extends Component {
                     data-item-image={node.image.fixed.src}
                     className="btn btn-warning snipcart-add-item"
                   >
-                    Join Now
+                    Order Now
                   </button>
                 </div>
               )
